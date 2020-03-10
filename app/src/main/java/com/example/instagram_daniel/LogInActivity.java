@@ -20,6 +20,11 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
+        if(ParseUser.getCurrentUser() != null)
+        {
+            
+        }
+
         //getting access to the "widgets" on the xml file
         final EditText usernameInput = findViewById(R.id.etUsername);
         final EditText passwordInput = findViewById(R.id.etPassword);
@@ -53,6 +58,7 @@ public class LogInActivity extends AppCompatActivity {
                     //Should not be directed to Main Activity, placeholder for now
                     final Intent screen = new Intent(LogInActivity.this, MainActivity.class);
                     startActivity(screen);
+                    finish();
                 }
                 else
                 {
